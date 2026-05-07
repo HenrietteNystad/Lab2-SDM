@@ -1,8 +1,5 @@
 from rdflib import Graph, Namespace, RDF, RDFS
 
-# Create a new RDF graph
-# g = Graph()
-
 # Define namespaces URIs
 EX = Namespace("http://example.org/sdm-kg#")
 
