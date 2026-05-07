@@ -1,0 +1,46 @@
+@prefix : <http://example.org/sdm-kg#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:AntiInflammatoryDrug a rdfs:Class ;
+    rdfs:subClassOf :Drug .
+
+:AntibioticDrug a rdfs:Class ;
+    rdfs:subClassOf :Drug .
+
+:Disease a rdfs:Class .
+
+:Drug a rdfs:Class .
+
+:InfectiousDisease a rdfs:Class ;
+    rdfs:subClassOf :Disease .
+
+:InflammatoryDisease a rdfs:Class ;
+    rdfs:subClassOf :Disease .
+
+:Amoxicillin a :AntibioticDrug ;
+    :treats :BacterialInfection .
+
+:Ibuprofen a :AntiInflammatoryDrug ;
+    :relieves :Arthritis ;
+    :worsens :GastricUlcer .
+
+:relieves a rdf:Property ;
+    rdfs:subPropertyOf :affects .
+
+:treats a rdf:Property ;
+    rdfs:subPropertyOf :affects .
+
+:worsens a rdf:Property ;
+    rdfs:subPropertyOf :affects .
+
+:Arthritis a :InflammatoryDisease .
+
+:BacterialInfection a :InfectiousDisease .
+
+:GastricUlcer a :Disease .
+
+:affects a rdf:Property ;
+    rdfs:domain :Drug ;
+    rdfs:range :Disease .
+
