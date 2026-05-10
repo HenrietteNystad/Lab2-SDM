@@ -2,15 +2,24 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+:AnalgesicDrug a rdfs:Class ;
+    rdfs:subClassOf :Drug .
+
 :AntiInflammatoryDrug a rdfs:Class ;
     rdfs:subClassOf :Drug .
 
 :AntibioticDrug a rdfs:Class ;
     rdfs:subClassOf :Drug .
 
+:AntiviralDrug a rdfs:Class ;
+    rdfs:subClassOf :Drug .
+
 :Disease a rdfs:Class .
 
 :Drug a rdfs:Class .
+
+:GastrointestinalDisease a rdfs:Class ;
+    rdfs:subClassOf :Disease .
 
 :InfectiousDisease a rdfs:Class ;
     rdfs:subClassOf :Disease .
@@ -18,8 +27,280 @@
 :InflammatoryDisease a rdfs:Class ;
     rdfs:subClassOf :Disease .
 
+:RespiratoryDisease a rdfs:Class ;
+    rdfs:subClassOf :Disease .
+
 :Amoxicillin a :AntibioticDrug ;
     :treats :BacterialInfection .
+
+:Disease_001 a :RespiratoryDisease ;
+    rdfs:label "Disease 001"@en .
+
+:Disease_022 a :GastrointestinalDisease ;
+    rdfs:label "Disease 022"@en .
+
+:Disease_024 a :InfectiousDisease ;
+    rdfs:label "Disease 024"@en .
+
+:Disease_039 a :InflammatoryDisease ;
+    rdfs:label "Disease 039"@en .
+
+:Disease_042 a :InfectiousDisease ;
+    rdfs:label "Disease 042"@en .
+
+:Drug_000 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 000"@en ;
+    :worsens :Disease_016,
+        :Disease_029 .
+
+:Drug_001 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 001"@en ;
+    :treats :Disease_043 ;
+    :worsens :Disease_007,
+        :Disease_034 .
+
+:Drug_002 a :AntiviralDrug ;
+    rdfs:label "Drug 002"@en ;
+    :treats :Disease_018 ;
+    :worsens :Disease_021 .
+
+:Drug_003 a :AntibioticDrug ;
+    rdfs:label "Drug 003"@en ;
+    :treats :Disease_029,
+        :Disease_046 .
+
+:Drug_004 a :AntibioticDrug ;
+    rdfs:label "Drug 004"@en ;
+    :relieves :Disease_032 ;
+    :treats :Disease_032,
+        :Disease_040 .
+
+:Drug_005 a :AntibioticDrug ;
+    rdfs:label "Drug 005"@en ;
+    :worsens :Disease_012,
+        :Disease_032 .
+
+:Drug_006 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 006"@en ;
+    :relieves :Disease_048 .
+
+:Drug_007 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 007"@en ;
+    :worsens :Disease_049 .
+
+:Drug_008 a :AnalgesicDrug ;
+    rdfs:label "Drug 008"@en ;
+    :relieves :Disease_031 ;
+    :treats :Disease_007,
+        :Disease_038 .
+
+:Drug_009 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 009"@en ;
+    :relieves :Disease_015 ;
+    :treats :Disease_015 .
+
+:Drug_010 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 010"@en ;
+    :treats :Disease_005,
+        :Disease_048 ;
+    :worsens :Disease_031 .
+
+:Drug_011 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 011"@en ;
+    :treats :Disease_008 ;
+    :worsens :Disease_010,
+        :Disease_030 .
+
+:Drug_012 a :AntibioticDrug ;
+    rdfs:label "Drug 012"@en ;
+    :relieves :Disease_013 ;
+    :worsens :Disease_038 .
+
+:Drug_013 a :AntibioticDrug ;
+    rdfs:label "Drug 013"@en ;
+    :relieves :Disease_025 ;
+    :treats :Disease_045 ;
+    :worsens :Disease_044 .
+
+:Drug_014 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 014"@en ;
+    :relieves :Disease_007,
+        :Disease_033 ;
+    :worsens :Disease_023 .
+
+:Drug_015 a :AntibioticDrug ;
+    rdfs:label "Drug 015"@en ;
+    :treats :Disease_004 .
+
+:Drug_016 a :AnalgesicDrug ;
+    rdfs:label "Drug 016"@en ;
+    :treats :Disease_037 ;
+    :worsens :Disease_014 .
+
+:Drug_017 a :AntibioticDrug ;
+    rdfs:label "Drug 017"@en ;
+    :treats :Disease_000,
+        :Disease_045 ;
+    :worsens :Disease_003 .
+
+:Drug_018 a :AnalgesicDrug ;
+    rdfs:label "Drug 018"@en ;
+    :treats :Disease_002 .
+
+:Drug_019 a :AntiviralDrug ;
+    rdfs:label "Drug 019"@en ;
+    :treats :Disease_017,
+        :Disease_032 .
+
+:Drug_020 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 020"@en ;
+    :relieves :Disease_013 ;
+    :worsens :Disease_008,
+        :Disease_036 .
+
+:Drug_021 a :AntibioticDrug ;
+    rdfs:label "Drug 021"@en ;
+    :relieves :Disease_015,
+        :Disease_026 ;
+    :treats :Disease_006 .
+
+:Drug_022 a :AnalgesicDrug ;
+    rdfs:label "Drug 022"@en ;
+    :worsens :Disease_027 .
+
+:Drug_023 a :AntiviralDrug ;
+    rdfs:label "Drug 023"@en ;
+    :relieves :Disease_026,
+        :Disease_046 .
+
+:Drug_024 a :AntiviralDrug ;
+    rdfs:label "Drug 024"@en ;
+    :worsens :Disease_041 .
+
+:Drug_025 a :AntibioticDrug ;
+    rdfs:label "Drug 025"@en ;
+    :relieves :Disease_006,
+        :Disease_046 ;
+    :treats :Disease_003 .
+
+:Drug_026 a :AntibioticDrug ;
+    rdfs:label "Drug 026"@en ;
+    :treats :Disease_012 .
+
+:Drug_027 a :AntiviralDrug ;
+    rdfs:label "Drug 027"@en ;
+    :relieves :Disease_008,
+        :Disease_011,
+        :Disease_029 .
+
+:Drug_028 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 028"@en ;
+    :treats :Disease_028 .
+
+:Drug_029 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 029"@en ;
+    :treats :Disease_003,
+        :Disease_005 ;
+    :worsens :Disease_034 .
+
+:Drug_030 a :AnalgesicDrug ;
+    rdfs:label "Drug 030"@en ;
+    :treats :Disease_026 .
+
+:Drug_031 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 031"@en ;
+    :relieves :Disease_003,
+        :Disease_013 .
+
+:Drug_032 a :AntiviralDrug ;
+    rdfs:label "Drug 032"@en ;
+    :relieves :Disease_000 .
+
+:Drug_033 a :AntiviralDrug ;
+    rdfs:label "Drug 033"@en ;
+    :relieves :Disease_027,
+        :Disease_029 .
+
+:Drug_034 a :AntiviralDrug ;
+    rdfs:label "Drug 034"@en ;
+    :relieves :Disease_009 ;
+    :worsens :Disease_035,
+        :Disease_045 .
+
+:Drug_035 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 035"@en ;
+    :relieves :Disease_013 .
+
+:Drug_036 a :AnalgesicDrug ;
+    rdfs:label "Drug 036"@en ;
+    :worsens :Disease_047 .
+
+:Drug_037 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 037"@en ;
+    :relieves :Disease_003 ;
+    :treats :Disease_037,
+        :Disease_047 .
+
+:Drug_038 a :AnalgesicDrug ;
+    rdfs:label "Drug 038"@en ;
+    :treats :Disease_003 ;
+    :worsens :Disease_033 .
+
+:Drug_039 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 039"@en ;
+    :treats :Disease_011,
+        :Disease_038,
+        :Disease_043 .
+
+:Drug_040 a :AntiviralDrug ;
+    rdfs:label "Drug 040"@en ;
+    :relieves :Disease_007 .
+
+:Drug_041 a :AntiviralDrug ;
+    rdfs:label "Drug 041"@en ;
+    :treats :Disease_037 ;
+    :worsens :Disease_002,
+        :Disease_005 .
+
+:Drug_042 a :AntibioticDrug ;
+    rdfs:label "Drug 042"@en ;
+    :worsens :Disease_033,
+        :Disease_037 .
+
+:Drug_043 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 043"@en ;
+    :relieves :Disease_013 ;
+    :worsens :Disease_045 .
+
+:Drug_044 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 044"@en ;
+    :relieves :Disease_008 ;
+    :treats :Disease_016 .
+
+:Drug_045 a :AntibioticDrug ;
+    rdfs:label "Drug 045"@en ;
+    :relieves :Disease_020 ;
+    :treats :Disease_000 ;
+    :worsens :Disease_019 .
+
+:Drug_046 a :AntiviralDrug ;
+    rdfs:label "Drug 046"@en ;
+    :treats :Disease_004 ;
+    :worsens :Disease_036 .
+
+:Drug_047 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 047"@en ;
+    :relieves :Disease_004,
+        :Disease_008 ;
+    :treats :Disease_032 .
+
+:Drug_048 a :AntibioticDrug ;
+    rdfs:label "Drug 048"@en ;
+    :relieves :Disease_018 .
+
+:Drug_049 a :AntiInflammatoryDrug ;
+    rdfs:label "Drug 049"@en ;
+    :relieves :Disease_034 .
 
 :Ibuprofen a :AntiInflammatoryDrug ;
     :relieves :Arthritis ;
@@ -38,9 +319,144 @@
 
 :BacterialInfection a :InfectiousDisease .
 
+:Disease_009 a :InfectiousDisease ;
+    rdfs:label "Disease 009"@en .
+
+:Disease_010 a :InflammatoryDisease ;
+    rdfs:label "Disease 010"@en .
+
+:Disease_014 a :GastrointestinalDisease ;
+    rdfs:label "Disease 014"@en .
+
+:Disease_017 a :RespiratoryDisease ;
+    rdfs:label "Disease 017"@en .
+
+:Disease_019 a :InflammatoryDisease ;
+    rdfs:label "Disease 019"@en .
+
+:Disease_020 a :InfectiousDisease ;
+    rdfs:label "Disease 020"@en .
+
+:Disease_021 a :RespiratoryDisease ;
+    rdfs:label "Disease 021"@en .
+
+:Disease_023 a :RespiratoryDisease ;
+    rdfs:label "Disease 023"@en .
+
+:Disease_025 a :InflammatoryDisease ;
+    rdfs:label "Disease 025"@en .
+
+:Disease_028 a :GastrointestinalDisease ;
+    rdfs:label "Disease 028"@en .
+
+:Disease_030 a :GastrointestinalDisease ;
+    rdfs:label "Disease 030"@en .
+
+:Disease_035 a :RespiratoryDisease ;
+    rdfs:label "Disease 035"@en .
+
+:Disease_040 a :InflammatoryDisease ;
+    rdfs:label "Disease 040"@en .
+
+:Disease_041 a :GastrointestinalDisease ;
+    rdfs:label "Disease 041"@en .
+
+:Disease_044 a :InfectiousDisease ;
+    rdfs:label "Disease 044"@en .
+
+:Disease_049 a :GastrointestinalDisease ;
+    rdfs:label "Disease 049"@en .
+
 :GastricUlcer a :Disease .
+
+:Disease_002 a :GastrointestinalDisease ;
+    rdfs:label "Disease 002"@en .
+
+:Disease_006 a :RespiratoryDisease ;
+    rdfs:label "Disease 006"@en .
+
+:Disease_011 a :InflammatoryDisease ;
+    rdfs:label "Disease 011"@en .
+
+:Disease_012 a :InflammatoryDisease ;
+    rdfs:label "Disease 012"@en .
+
+:Disease_016 a :InflammatoryDisease ;
+    rdfs:label "Disease 016"@en .
+
+:Disease_018 a :InfectiousDisease ;
+    rdfs:label "Disease 018"@en .
+
+:Disease_027 a :InflammatoryDisease ;
+    rdfs:label "Disease 027"@en .
+
+:Disease_031 a :InflammatoryDisease ;
+    rdfs:label "Disease 031"@en .
+
+:Disease_036 a :GastrointestinalDisease ;
+    rdfs:label "Disease 036"@en .
+
+:Disease_043 a :InfectiousDisease ;
+    rdfs:label "Disease 043"@en .
+
+:Disease_047 a :GastrointestinalDisease ;
+    rdfs:label "Disease 047"@en .
+
+:Disease_048 a :InfectiousDisease ;
+    rdfs:label "Disease 048"@en .
+
+:Disease_000 a :GastrointestinalDisease ;
+    rdfs:label "Disease 000"@en .
+
+:Disease_004 a :InflammatoryDisease ;
+    rdfs:label "Disease 004"@en .
+
+:Disease_005 a :RespiratoryDisease ;
+    rdfs:label "Disease 005"@en .
+
+:Disease_015 a :RespiratoryDisease ;
+    rdfs:label "Disease 015"@en .
+
+:Disease_026 a :RespiratoryDisease ;
+    rdfs:label "Disease 026"@en .
+
+:Disease_033 a :InflammatoryDisease ;
+    rdfs:label "Disease 033"@en .
+
+:Disease_034 a :InflammatoryDisease ;
+    rdfs:label "Disease 034"@en .
+
+:Disease_038 a :RespiratoryDisease ;
+    rdfs:label "Disease 038"@en .
+
+:Disease_046 a :InflammatoryDisease ;
+    rdfs:label "Disease 046"@en .
 
 :affects a rdf:Property ;
     rdfs:domain :Drug ;
     rdfs:range :Disease .
+
+:Disease_007 a :InflammatoryDisease ;
+    rdfs:label "Disease 007"@en .
+
+:Disease_029 a :GastrointestinalDisease ;
+    rdfs:label "Disease 029"@en .
+
+:Disease_037 a :GastrointestinalDisease ;
+    rdfs:label "Disease 037"@en .
+
+:Disease_045 a :InflammatoryDisease ;
+    rdfs:label "Disease 045"@en .
+
+:Disease_008 a :RespiratoryDisease ;
+    rdfs:label "Disease 008"@en .
+
+:Disease_013 a :GastrointestinalDisease ;
+    rdfs:label "Disease 013"@en .
+
+:Disease_032 a :RespiratoryDisease ;
+    rdfs:label "Disease 032"@en .
+
+:Disease_003 a :RespiratoryDisease ;
+    rdfs:label "Disease 003"@en .
 
